@@ -47,5 +47,6 @@ jobs:
         with:
           name: MegaLinter reports
           path: |
-            megalinter-reports/linters_logs/ERROR-TYPESCRIPT_STANDARD.log
-            megalinter-reports/mega-linter-report.json
+            megalinter-reports
+            mega-linter.log
+
