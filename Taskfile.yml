@@ -6,4 +6,5 @@ includes:
 
 tasks:
   code:
-    - task: lint:megalinter
+    cmds:
+      - task: lint:megalinter
