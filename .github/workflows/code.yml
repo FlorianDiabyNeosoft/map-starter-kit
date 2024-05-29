@@ -1,5 +1,5 @@
 ---
-name: "Megalinter"
+name: "Code"
 
 on:
   push:
@@ -10,12 +10,15 @@ on:
       - master
 
 jobs:
-  build:
+  megalinter:
     runs-on: ubuntu-latest
 
     steps:
       - name: Set TERM environment variable
         run: echo "TERM=xterm" >> $GITHUB_ENV
+      
+      - name: Checkout
+        uses: actions/checkout@v3
       
       - name: Install Task
         uses: arduino/setup-task@v2
