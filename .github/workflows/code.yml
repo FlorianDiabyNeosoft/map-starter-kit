@@ -32,11 +32,13 @@ jobs:
       - name: Show files
         run: ls -l && ls megalinter-reports/
       
-      - name: Annotate Code
-        uses: DerLev/eslint-annotations@v2
+      - name: Test Report
+        uses: phoenix-actions/test-reporting@v8
+        id: test-report               # Set ID reference for step
+        if: success() || failure()    # run this step even if previous step failed
         with:
-          eslint-report: megalinter-reports/mega-linter-report.json
-          typescript-log: megalinter-reports/linters_logs/ERROR-TYPESCRIPT_STANDARD.log
+          name: Megalinter report            # Name of the check run which will be created
+          path: megalinter-reports/mega-linter-report.json    # Path to test results
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
