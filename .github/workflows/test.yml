@@ -1,5 +1,3 @@
-# MegaLinter GitHub Action configuration file
-# More info at https://megalinter.io
 ---
 name: MegaLinter
 on:
@@ -9,6 +7,10 @@ on:
   pull_request:
     branches:
       - master
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true      
 
 jobs:
   megalinter:
