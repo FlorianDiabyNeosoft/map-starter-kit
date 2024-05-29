@@ -33,15 +33,6 @@ jobs:
       
       - name: Run Megalinter
         run: task code
-      
-      - name: Show files
-        run: ls -l && ls megalinter-reports/
-    
-      - name: Upload linting results
-        uses: kibalabs/github-action-create-annotations@main
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          json-file-path: ./megalinter-reports/mega-linter-report.json
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
