@@ -35,7 +35,7 @@ jobs:
       - name: Annotate Code
         uses: DerLev/eslint-annotations@v2
         with:
-          eslint-report: megalinter-reports/mega-linter-reports.json
+          eslint-report: megalinter-reports/mega-linter-report.json
           typescript-log: megalinter-reports/linters_logs/ERROR-TYPESCRIPT_STANDARD.log
 
       - name: Archive production artifacts
@@ -45,4 +45,4 @@ jobs:
           name: MegaLinter reports
           path: |
             megalinter-reports/linters_logs/ERROR-TYPESCRIPT_STANDARD.log
-            megalinter-reports/mega-linter-reports.json
+            megalinter-reports/mega-linter-report.json
