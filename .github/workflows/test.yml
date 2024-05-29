@@ -20,20 +20,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          token: ${{secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      # MegaLinter
       - name: MegaLinter
-        uses: oxsecurity/megalinter@v7
-
-      # Upload MegaLinter artifacts
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
-        if: success() || failure()
-        with:
-          name: MegaLinter reports
-          path: |
-            megalinter-reports/linters_logs/ERROR-TYPESCRIPT_STANDARD.log
-            megalinter-reports/mega-linter-report.json
-
+        uses: oxsecurity/megalinter/flavors/javascript@v7.9.0
+        id: ml
