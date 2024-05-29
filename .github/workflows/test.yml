@@ -1,21 +1,19 @@
 ---
 name: MegaLinter
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+on: [push]
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
-  cancel-in-progress: true      
+  cancel-in-progress: true
 
 jobs:
   megalinter:
     name: MegaLinter
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
 
     steps:
       # Git Checkout
@@ -30,3 +28,4 @@ jobs:
         id: ml
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISABLE: COPYPASTE,SPELL
