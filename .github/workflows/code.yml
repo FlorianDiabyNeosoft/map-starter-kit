@@ -19,6 +19,11 @@ jobs:
       
       - name: Checkout
         uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "18.x"
+          registry-url: "https://registry.npmjs.org"
       
       - name: Install Task
         uses: arduino/setup-task@v2
@@ -31,14 +36,6 @@ jobs:
       
       - name: Show files
         run: ls -l && ls megalinter-reports/
-      
-      - name: Test Report
-        uses: phoenix-actions/test-reporting@v8
-        id: test-report               # Set ID reference for step
-        if: success() || failure()    # run this step even if previous step failed
-        with:
-          name: Megalinter report            # Name of the check run which will be created
-          path: megalinter-reports/mega-linter-report.json    # Path to test results
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
