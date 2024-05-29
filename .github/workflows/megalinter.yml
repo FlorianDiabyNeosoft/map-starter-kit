@@ -20,8 +20,11 @@ jobs:
       - name: Install Task
         uses: arduino/setup-task@v2
       
+      - name: Check install
+        run: task -a
+      
       - name: Run Megalinter
-        run: task code
+        run: task code; ls -l
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
