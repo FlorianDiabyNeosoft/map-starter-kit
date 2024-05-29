@@ -1,0 +1,25 @@
+---
+name: "Code"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  megalinter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set TERM environment variable
+        run: echo "TERM=xterm" >> $GITHUB_ENV
+      
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: MegaLinter
+        uses: oxsecurity/megalinter/flavors/javascript@v7.11.1
+    
