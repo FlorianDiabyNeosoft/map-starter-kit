@@ -28,3 +28,5 @@ jobs:
       - name: MegaLinter
         uses: oxsecurity/megalinter/flavors/javascript@v7.9.0
         id: ml
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
