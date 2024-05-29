@@ -3,7 +3,7 @@ name: MegaLinter
 on: [push]
 
 concurrency:
-  group: ${{ github.ref }}-${{ github.workflow }}
+  group: test-${{ github.workflow }}
   cancel-in-progress: true
 
 jobs:
