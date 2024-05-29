@@ -1,7 +1,8 @@
 ---
 version: '3'
 
-megalinter:
-  desc: MegaLinter is an Open-Source tool for CI/CD workflows
-  cmds:
-    - docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:rw -v $(pwd):/tmp/lint:rw oxsecurity/megalinter-javascript:v7.11.1
+tasks:
+  megalinter:
+    desc: MegaLinter is an Open-Source tool for CI/CD workflows
+    cmds:
+      - docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:rw -v $(pwd):/tmp/lint:rw oxsecurity/megalinter-javascript:v7.11.1
