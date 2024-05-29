@@ -31,6 +31,12 @@ jobs:
       
       - name: Show files
         run: ls -l
+      
+      - name: Annotate Code
+        uses: DerLev/eslint-annotations@v2
+        with:
+          eslint-report: megalinter-reports/mega-linter-reports.json
+          typescript-log: megalinter-reports/linters_logs/ERROR-TYPESCRIPT_STANDARD.log
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
