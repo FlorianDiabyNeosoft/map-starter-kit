@@ -1,5 +1,5 @@
 ---
-name: "DevSecOps"
+name: "code"
 
 on:
   push:
