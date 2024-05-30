@@ -80,7 +80,6 @@ jobs:
         run: task deploy
 
       - name: Deploy in MAP STORAGE
-        if: ${{ env.UPLOAD_MODE == 'MAP_STORAGE' }}
         run: task workadventure:deploy_map_storage
 
       - name: Deploy on GITHUB PAGES
