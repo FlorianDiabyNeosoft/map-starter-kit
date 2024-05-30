@@ -1,0 +1,28 @@
+---
+version: '3'
+
+tasks:
+  setup_api_key:
+    desc: Use API key from secrets
+    cmds:
+      - cmd: echo "API_KEY=${API_KEY}" >> $GITHUB_ENV
+  
+  setup_map_storage:
+    desc: Use URL Map STORAGE from secrets
+    cmds:
+      - cmd: echo "URL_MAP_STORAGE=${URL_MAP_STORAGE}" >> $GITHUB_ENV
+  
+  create_env_file:
+    desc: Generate .env.secret
+    cmds:
+      - cmd: echo "API_KEY=${{ secrets.API_KEY }}" > .env.secret
+
+  upload_mode:
+    desc: Extract UPLOAD_MODE from .env
+    cmds:
+      - cmd: echo "UPLOAD_MODE=$(grep UPLOAD_MODE .env | cut -d '=' -f2)" >> $GITHUB_ENV
+
+  deploy_map_storage:
+    desc: Deploy in MAP STORAGE
+    cmds:
+      - cmd: npx @workadventure/upload-maps upload.js

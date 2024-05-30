@@ -1,5 +1,5 @@
 ---
-name: "Code"
+name: "DevSecOps"
 
 on:
   push:
@@ -10,13 +10,8 @@ on:
       - master
 
 jobs:
-  megalinter:
+  code:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-
     steps:
       - name: Set TERM environment variable
         run: echo "TERM=xterm" >> $GITHUB_ENV
