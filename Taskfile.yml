@@ -4,7 +4,6 @@ version: '3'
 includes:
   lint: .config/linter/Taskfile.yml
   npm: .config/npm/Taskfile.yml
-  workadventure: .config/workadventure/Taskfile.yml
 
 tasks:
   code:
@@ -19,7 +18,3 @@ tasks:
   deploy:
     cmds:
       - task: build
-      - task: workadventure:setup_api_key
-      - task: workadventure:setup_map_storage
-      - task: workadventure:create_env_file
-      - task: workadventure:upload_mode
