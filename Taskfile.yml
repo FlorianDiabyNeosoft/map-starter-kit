@@ -18,3 +18,4 @@ tasks:
   deploy:
     cmds:
       - task: build
+

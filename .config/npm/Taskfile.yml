@@ -11,3 +11,4 @@ tasks:
     desc: Build app
     cmds:
       - cmd: npm run build
+

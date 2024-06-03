@@ -6,6 +6,7 @@ This is a starter kit to help you build your own map for [WorkAdventure](https:/
 
 To understand how to use this starter kit, follow the tutorial at [https://docs.workadventu.re/map-building/tiled-editor/](https://docs.workadventu.re/map-building/tiled-editor/).
 
+
 ## Structure
 
 We recommend following this file structure:
