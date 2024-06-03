@@ -82,6 +82,6 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: main # The branch the action should deploy to.
+          BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: dist/ # The folder the action should deploy.
           BASE_BRANCH: main
